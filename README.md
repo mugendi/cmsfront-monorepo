@@ -27,6 +27,7 @@ Over the decades, Wordpress, Drupal and others have dominated the world of conte
 - **Cutting Edge**
     - Should use modern technologies such as MDX to allow for advanced component based content management.
     - Should incorporate Artificial Intelligence (via plugins) to perform tasks like content composition and SEO content optimization.
+    - Where possible, apply web 2.0-3.0 technologies especially in data  management such as conflict free collaborative editing 
 
 ## System Requirements
 Built and tested on Ubuntu 22.04 but should run on any system with the following basic requirements:
