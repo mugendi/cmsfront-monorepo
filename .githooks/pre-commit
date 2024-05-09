@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+# Build client production
+npm run client:build:prod
+# add git build
+git add client/build/
+
+# echo "*****Running unit tests******"
+
+# stash_commit="$(git stash create)"
+# git reset —-hard
+
+# npm test -- --watchAll=false
+
+# status=$?
+
+# if [[ -n "${stash_commit}" ]]
+#  then git stash apply "${stash_commit}"
+# fi
+
+# exit $status
