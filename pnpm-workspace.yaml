@@ -1,0 +1,13 @@
+# Copyright (c) 2024 Anthony Mugendi
+# 
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+# pnpm-workspace.yaml
+packages:
+  # executable/launchable applications
+  - 'server'
+  - 'client'
+  # important librararies that may be used be several packages
+  # These include libraries such as databases (db) that are loaded into the apps (KOA's) contect
+  - 'libraries/*'

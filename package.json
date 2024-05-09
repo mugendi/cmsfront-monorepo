@@ -1,0 +1,23 @@
+{
+  "name": "cmsfront",
+  "version": "1.0.0",
+  "description": "Content Management for tomorrows websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cms",
+    "content",
+    "ai"
+  ],
+  "author": "Anthony Mugendi <ngurumugz@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/mugendi/cmsfront-monorepo.git",
+  "dependencies": {
+    "config": "^3.3.11",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "toml": "^3.0.0"
+  }
+}
