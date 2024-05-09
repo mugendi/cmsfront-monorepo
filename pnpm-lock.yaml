@@ -20,6 +20,10 @@ importers:
       toml:
         specifier: ^3.0.0
         version: 3.0.0
+    devDependencies:
+      pre-commit:
+        specifier: ^1.2.2
+        version: 1.2.2
 
   client:
     devDependencies:
@@ -50,9 +54,6 @@ importers:
       import:
         specifier: ^0.0.6
         version: 0.0.6
-      pre-commit:
-        specifier: ^1.2.2
-        version: 1.2.2
       rollup-plugin-delete:
         specifier: ^2.0.0
         version: 2.0.0
