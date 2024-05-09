@@ -4,7 +4,10 @@
   "description": "Content Management for tomorrows websites",
   "main": "index.js",
   "scripts": {
-    "client:build:prod": "pnpm --filter client build:prod"
+    "client:build:prod": "pnpm --filter client build:prod",
+    "client:build:dev": "pnpm --filter client build:dev",
+    "dev" : "run-p client:build:dev",
+    "prod" : "run-p client:build:prod"
   },
   "keywords": [
     "cms",
