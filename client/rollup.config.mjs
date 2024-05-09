@@ -8,6 +8,7 @@ import styles from 'rollup-plugin-styles';
 import replace from '@rollup/plugin-replace';
 import json from '@rollup/plugin-json';
 import del from 'rollup-plugin-delete';
+import serve from 'rollup-plugin-serve';
 
 import fg from 'fast-glob';
 
@@ -84,6 +85,15 @@ const script_exports = entries.map((filePath) => {
 
       // minify output
       production && terser({ output: { comments: false } }),
+
+      // run server on dev mode
+      !production &&
+      serve({
+        open: true,
+        host: 'localhost',
+        port: 10001,
+        openPage: '/examples/index.html',
+      }),
 
       // hot module reload during
       hmr({

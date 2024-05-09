@@ -56,6 +56,9 @@ importers:
       rollup-plugin-reloadsite:
         specifier: ^1.0.4
         version: 1.0.4
+      rollup-plugin-serve:
+        specifier: ^1.1.1
+        version: 1.1.1
       rollup-plugin-styles:
         specifier: ^4.0.0
         version: 4.0.0(rollup@2.79.1)
@@ -1581,6 +1584,12 @@ packages:
       mime-db: 1.52.0
     dev: true
 
+  /mime@2.6.0:
+    resolution: {integrity: sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==}
+    engines: {node: '>=4.0.0'}
+    hasBin: true
+    dev: true
+
   /min-indent@1.0.1:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
@@ -1695,6 +1704,11 @@ packages:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
+    dev: true
+
+  /opener@1.5.2:
+    resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
+    hasBin: true
     dev: true
 
   /optimist@0.3.7:
@@ -2313,6 +2327,13 @@ packages:
       - bufferutil
       - supports-color
       - utf-8-validate
+    dev: true
+
+  /rollup-plugin-serve@1.1.1:
+    resolution: {integrity: sha512-H0VarZRtFR0lfiiC9/P8jzCDvtFf1liOX4oSdIeeYqUCKrmFA7vNiQ0rg2D+TuoP7leaa/LBR8XBts5viF6lnw==}
+    dependencies:
+      mime: 2.6.0
+      opener: 1.5.2
     dev: true
 
   /rollup-plugin-styles@4.0.0(rollup@2.79.1):
