@@ -7,13 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build:dev": "rollup -c -w",
-    "build:prod": "rollup -c",
-    "git-add-build": "git add build/"
+    "build:prod": "rollup -c"
   },
-  "pre-commit": [
-    "build:prod",
-    "git-add-build"
-  ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
@@ -24,7 +19,6 @@
     "fg": "^0.0.3",
     "from": "^0.1.7",
     "import": "^0.0.6",
-    "pre-commit": "^1.2.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-reloadsite": "^1.0.4",
     "rollup-plugin-styles": "^4.0.0",
