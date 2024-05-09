@@ -28,8 +28,11 @@ Over the decades, Wordpress, Drupal and others have dominated the world of conte
     - Should use modern technologies such as MDX to allow for advanced component based content management.
     - Should incorporate Artificial Intelligence (via plugins) to perform tasks like content composition and SEO content optimization.
 
-## Requirements
-This monorepo is managed via [pnpm](https://www.npmjs.com/package/pnpm) so have it installed. 
+## System Requirements
+Built and tested on Ubuntu 22.04 but should run on any system with the following basic requirements:
+
+1. [NodeJs](https://nodejs.org/en)
+2. This monorepo is managed via [pnpm](https://www.npmjs.com/package/pnpm) so have it installed. 
 
 ## Documentation
 
