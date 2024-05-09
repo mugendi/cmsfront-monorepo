@@ -1,1 +1,7 @@
-.vscode/settings.json
+node_modules
+vscode/settings.json
+
+# Ignore all non-minified/non production builds
+client/build/*
+!client/build/**/*.min.js
+
