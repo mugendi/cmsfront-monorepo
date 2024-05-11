@@ -8,6 +8,8 @@ packages:
   # executable/launchable applications
   - 'server'
   - 'client'
+  - 'ai'
+  
   # important librararies that may be used be several packages
   # These include libraries such as databases (db) that are loaded into the apps (KOA's) contect
   - 'libraries/*'
