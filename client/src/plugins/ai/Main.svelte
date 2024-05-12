@@ -96,9 +96,9 @@ As the years passed, Ethan became a symbol of hope and inspiration, known throug
     let promptWords = obj.promptWords || 1;
 
     if (countWords() < promptWords) {
-        prompt = '';
-        return
-    };
+      prompt = "";
+      return;
+    }
 
     if (originalPrompt) {
       prompt = [pre, originalPrompt, post].filter((v) => v && v.length).join(" ");
@@ -141,18 +141,21 @@ As the years passed, Ethan became a symbol of hope and inspiration, known throug
     </div>
 
     <button class="" on:click={postPrompt} disabled={disableButton || aiRunning}>
-      {aiRunning ? "Loading..." : "Submit Prompt"}
+      {aiRunning ? "AI Loading..." : "Submit Prompt"}
     </button>
     <button disabled={!aiResponse || aiRunning} on:click={useResponse}> Use Response </button>
   </div>
 
-  <div class="response {aiResponse && aiResponse.length > 0 ? 'show' : ''}">
+  <div class="scroller response {aiResponse && aiResponse.length > 0 ? 'show' : ''}">
     <h2>Response</h2>
     <pre>{aiResponse}</pre>
   </div>
 </div>
 
 <style>
+  div.ai-container {
+    width: 450px;
+  }
   h2 {
     margin: 2px 0;
   }
@@ -167,7 +170,7 @@ As the years passed, Ethan became a symbol of hope and inspiration, known throug
     margin: 10px 0;
     padding: 10px;
     background: #eee;
-    width: 600px;
+    width: calc(100% - 20px);
     height: 300px;
     overflow: scroll;
   }
@@ -181,108 +184,6 @@ As the years passed, Ethan became a symbol of hope and inspiration, known throug
     text-wrap: wrap;
   }
 
-  button {
-    appearance: none;
-    background-color: #fafbfc;
-    border: 1px solid rgba(27, 31, 35, 0.15);
-    border-radius: 6px;
-    box-shadow:
-      rgba(27, 31, 35, 0.04) 0 1px 0,
-      rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-    box-sizing: border-box;
-    color: #24292e;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 6px 16px 10px;
-    position: relative;
-    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-    word-wrap: break-word;
-  }
+  
 
-  button:hover {
-    background-color: #f3f4f6;
-    text-decoration: none;
-    transition-duration: 0.1s;
-  }
-
-  button:disabled {
-    background-color: #fafbfc;
-    border-color: rgba(27, 31, 35, 0.15);
-    color: #959da5;
-    cursor: default;
-  }
-
-  button:active {
-    background-color: #edeff2;
-    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-    transition: none 0s;
-  }
-
-  button:focus {
-    outline: 1px transparent;
-  }
-
-  button:before {
-    display: none;
-  }
-
-  button:-webkit-details-marker {
-    display: none;
-  }
-
-  button.loading {
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4yIi8+PHN0b3Agb2Zmc2V0PSIyNSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4yIi8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4yIi8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
-    background-size: 100%;
-    background-image: -webkit-gradient(
-      linear,
-      0% 0%,
-      100% 100%,
-      color-stop(25%, rgba(255, 255, 255, 0.2)),
-      color-stop(25%, rgba(0, 0, 0, 0)),
-      color-stop(50%, rgba(0, 0, 0, 0)),
-      color-stop(50%, rgba(255, 255, 255, 0.2)),
-      color-stop(75%, rgba(255, 255, 255, 0.2)),
-      color-stop(75%, rgba(0, 0, 0, 0)),
-      color-stop(100%, rgba(0, 0, 0, 0))
-    );
-    background-image: -moz-linear-gradient(
-      left top,
-      rgba(255, 255, 255, 0.2) 25%,
-      rgba(0, 0, 0, 0) 25%,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(0, 0, 0, 0) 75%,
-      rgba(0, 0, 0, 0)
-    );
-    background-image: -webkit-linear-gradient(
-      left top,
-      rgba(255, 255, 255, 0.2) 25%,
-      rgba(0, 0, 0, 0) 25%,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(0, 0, 0, 0) 75%,
-      rgba(0, 0, 0, 0)
-    );
-    background-image: linear-gradient(
-      to right bottom,
-      rgba(255, 255, 255, 0.2) 25%,
-      rgba(0, 0, 0, 0) 25%,
-      rgba(0, 0, 0, 0) 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(0, 0, 0, 0) 75%,
-      rgba(0, 0, 0, 0)
-    );
-    background-size: 80px 80px;
-    animation: loading 1.5s linear infinite;
-  }
 </style>

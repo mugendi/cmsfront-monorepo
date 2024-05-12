@@ -23,7 +23,7 @@ function createToolbarItemOption(divContainer, i18n) {
 }
 
 export default function AI(context, options) {
-  const { eventEmitter, i18n} = context;
+  const { eventEmitter, i18n } = context;
   const container = document.createElement('div');
 
   // Attach component via Svelte
@@ -40,15 +40,20 @@ export default function AI(context, options) {
     ],
     markdownCommands: {
       aiPrompt: (payload, state, dispatch) => {
-        context.instance.insertText(payload + '\n\n');
+        setContent(context.instance, payload);
         return true;
       },
     },
     wysiwygCommands: {
       aiPrompt: (payload, state, dispatch) => {
-        context.instance.insertText(payload + '\n\n');
+        setContent(context.instance, payload);
         return true;
       },
     },
   };
+}
+
+function setContent(editor, payload) {
+  editor.moveCursorToEnd(true);
+  editor.insertText('\n\n' + payload + '\n\n');
 }
