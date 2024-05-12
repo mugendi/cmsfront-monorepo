@@ -7,8 +7,12 @@
 
 import '@toast-ui/editor/toastui-editor.css';
 import { Editor as TuiEditor } from '@toast-ui/editor';
-import { loadPlugins } from './lib/plugins';
 import { Eev } from '../../lib/events';
+
+// Plugins
+import { loadPlugins } from './lib/plugins';
+import AI from '../../plugins/ai';
+
 
 export default class Editor {
   constructor(opts = {}) {
@@ -17,12 +21,12 @@ export default class Editor {
         el: document.querySelector('#editor'),
         previewStyle: 'vertical',
         height: '400px',
-        initialValue: '',
+        initialValue: '<h2>Hello There and here </h2>',
         theme: 'dark',
         initialEditType: 'markdown',
         previewStyle: 'tab',
         usageStatistics: false,
-        plugins: [],
+        plugins: [AI],
       },
     };
 
@@ -51,18 +55,10 @@ export default class Editor {
         });
       });
 
+     
       return { editor, emitter };
     } catch (error) {
       throw error;
     }
   }
 }
-
-// //
-// new Editor({})
-//   .init()
-//   .then(({ editor, emitter }) => {
-//     emitter.on('editor:change', console.log);
-//     // console.log(resp);
-//   })
-//   .catch(console.error);

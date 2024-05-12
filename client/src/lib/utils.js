@@ -1,10 +1,9 @@
 /**
  * Copyright (c) 2024 Anthony Mugendi
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
-
 
 /**
  * RegExps.
@@ -14,7 +13,7 @@
 
 var protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
 
-var localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/
+var localhostDomainRE = /^localhost[\:?\d]*(?:[^\:?\d]\S*)?$/;
 var nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
 
 /**
@@ -24,7 +23,7 @@ var nonLocalhostDomainRE = /^[^\s\.]+\.\S{2,}$/;
  * @return {Boolean}
  */
 
-export function isUrl(string){
+export function isUrl(string) {
   if (typeof string !== 'string') {
     return false;
   }
@@ -39,8 +38,10 @@ export function isUrl(string){
     return false;
   }
 
-  if (localhostDomainRE.test(everythingAfterProtocol) ||
-      nonLocalhostDomainRE.test(everythingAfterProtocol)) {
+  if (
+    localhostDomainRE.test(everythingAfterProtocol) ||
+    nonLocalhostDomainRE.test(everythingAfterProtocol)
+  ) {
     return true;
   }
 
@@ -48,7 +49,25 @@ export function isUrl(string){
 }
 
 export function arrify(v) {
-    if (v === undefined) return [];
-    return Array.isArray(v) ? v : [v];
+  if (v === undefined) return [];
+  return Array.isArray(v) ? v : [v];
 }
 
+export function stripTags(html) {
+
+  let div = document.createElement('div');
+  div.innerHTML = html;
+  return div.textContent;
+}
+
+export function selectionIsHeading(html) {
+  let div = document.createElement('div');
+  div.innerHTML = html;
+  let tag = div.childNodes[0];
+
+  if (!tag || !tag.tagName) return false;
+
+  return (
+    ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].indexOf(tag.tagName.toLowerCase()) > -1
+  );
+}

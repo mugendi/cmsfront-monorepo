@@ -97,7 +97,7 @@ const script_exports = entries.map((filePath) => {
 
       // hot module reload during
       hmr({
-        dirs: ['./build'],
+        dirs: ['./build', './examples'],
         filter: '**/*.js',
       }),
     ],
