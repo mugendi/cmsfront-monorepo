@@ -5,5 +5,5 @@ node_modules
 client/build/*
 !client/build/**/*.min.js
 
-**.back
+**.back*
 
