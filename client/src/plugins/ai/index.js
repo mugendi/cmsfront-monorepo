@@ -12,7 +12,7 @@ const PREFIX = 'toastui-editor-';
 function createToolbarItemOption(divContainer, i18n) {
   return {
     name: 'ai',
-    tooltip: 'AI',
+    tooltip: 'AI Composer',
     className: 'toolbar-icon icon-ai',
     popup: {
       className: `${PREFIX}popup-ai`,
@@ -34,7 +34,7 @@ export default function AI(context, options) {
     toolbarItems: [
       {
         groupIndex: 0,
-        itemIndex: 10,
+        itemIndex: 0,
         item: toolbarItem,
       },
     ],
