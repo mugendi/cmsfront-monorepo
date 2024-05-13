@@ -1,0 +1,116 @@
+/**
+ * Copyright (c) 2024 Anthony Mugendi
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+.toastui-editor-form {
+  min-width: 350px;
+}
+
+.toastui-editor-form .my-1 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.toastui-editor-form label {
+  margin: 5px 0 1px;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.toastui-editor-form button {
+  margin: 5px 0 0;
+}
+
+.toastui-editor-form button[disabled] {
+  color: #bbb;
+  background: #eee;
+  cursor: crosshair;
+}
+
+.toastui-editor-form input,
+.toastui-editor-form textarea,
+.toastui-editor-form select {
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 100%;
+  background: #fefefe;
+  font-size: 1.3em;
+  color: #555;
+}
+
+.toastui-editor-form textarea {
+  width: calc(100% - 10px);
+  height: 80px;
+}
+
+.toastui-editor-form select.noValue {
+  color: #aaa;
+}
+
+.toastui-editor-form button {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px 10px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.toastui-editor-form button + button {
+  margin-left: 5px;
+}
+
+.toastui-editor-form button:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.toastui-editor-form button:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.toastui-editor-form button:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.toastui-editor-form button:focus {
+  outline: 1px transparent;
+}
+
+.toastui-editor-form button:before {
+  display: none;
+}
+
+.toastui-editor-form button:-webkit-details-marker {
+  display: none;
+}
+
+.toastui-editor-defaultUI-toolbar .toolbar-icon {
+  background: transparent;
+}
+

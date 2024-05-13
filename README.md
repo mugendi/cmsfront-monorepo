@@ -21,12 +21,16 @@ Over the decades, Wordpress, Drupal and others have dominated the world of conte
     - Should remove the need for data modelling. You simply design your UI and annotate it.
 - **Light**
     - The core system must be light weight. All additional functionality to be provided via a plugin system.
+    - Use Svelte because it 'disappears' from source leaving lean, clean, pure Javascript code
 - **Fast**
     - Should utilize browser cacheing as much as possible to ensure websites load almost instantaneously
     - Should be easy to integrate with CDNS such as S3 for even faster content loading
+    - Pre-compile page MDX for fast client-side content display
+    - Use Svelte for its speed [Svelte for Performance](https://configr.medium.com/svelte-for-performance-60f8df5c2c2c)
 - **Cutting Edge**
     - Should use modern technologies such as MDX to allow for advanced component based content management.
     - Should incorporate Artificial Intelligence (via plugins) to perform tasks like content composition and SEO content optimization.
+    - Where possible, apply web 2.0-3.0 technologies especially in data  management such as conflict free collaborative editing 
 
 ## System Requirements
 Built and tested on Ubuntu 22.04 but should run on any system with the following basic requirements:
